@@ -58,7 +58,8 @@ public class CommunicationController {
      */
     @GetMapping("/dataChange")
     public Boolean notifyConfigInfo(HttpServletRequest request,
-                                    @RequestParam("dataId") String dataId, @RequestParam("group") String group,
+                                    @RequestParam("dataId") String dataId,
+                                    @RequestParam("group") String group,
                                     @RequestParam(value = "tenant", required = false, defaultValue = StringUtils.EMPTY)
                                         String tenant,
                                     @RequestParam(value = "tag", required = false) String tag) {
@@ -77,7 +78,7 @@ public class CommunicationController {
     }
 
     /**
-     * 在本台机器上获得订阅改配置的客户端信息
+     * 在本台机器上获得订阅该配置的客户端信息
      */
     @GetMapping("/configWatchers")
     public SampleResult getSubClientConfig(@RequestParam("dataId") String dataId,
